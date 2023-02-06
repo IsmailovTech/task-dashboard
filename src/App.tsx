@@ -4,15 +4,14 @@ import Accounts from './components/Accounts/Accounts'
 import Integration from './components/Integrations/Integration'
 import Notification from './components/Notificatiion/Notification'
 import Profile from './components/Profile/Profile'
-import Sidebar from './components/Sidebar/Sidebar'
 import Subscription from './components/Subscription/Subscription'
 import Usagerepost from './components/UsageReport/Usagerepost'
 import Users from './components/Users/Users'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
+import Sidebar1 from './components/BaseComponents/Sidebar1'
 
 function App() {
-
-  const[dark,setDark] = useState(false)
+  const [dark, setDark] = useState(false)
 
   const changeTheme = () => {
     setDark(!dark)
@@ -20,12 +19,12 @@ function App() {
 
   return (
     <div>
-      <div className={`flex ${dark === true ? "bg-white" : "bg-zinc-900"} `}>
-        <div className="w-sitebarWidth">
-          <Sidebar />
+      <div className={`flex ${dark === true ? 'bg-white' : 'bg-zinc-900 '} `}>
+        <div className="w-sitebarWidth ">
+          <Sidebar1 />
         </div>
         <Routes>
-          <Route path="/" element={<Subscription dark={dark} />} />
+          <Route path="/" element={<Accounts />} />
           <Route path="/accounts" element={<Accounts />} />
           <Route path="/users" element={<Users />} />
           <Route path="/subscription" element={<Subscription dark={dark} />} />
@@ -34,8 +33,13 @@ function App() {
           <Route path="/integration" element={<Integration />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-        <button className="absolute right-2 bg-zinc-700 p-1 rounded-full top-2 hover:bg-zinc-600" onClick={changeTheme}>
-          <DarkModeIcon className={`${dark === true ? "text-black" : "text-white"}`} />
+        <button
+          className="absolute right-2 bg-zinc-700 p-1 rounded-full top-2 hover:bg-zinc-600"
+          onClick={changeTheme}
+        >
+          <DarkModeIcon
+            className={`${dark === true ? 'text-black' : 'text-white'}`}
+          />
         </button>
       </div>
     </div>

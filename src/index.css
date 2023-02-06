@@ -17,3 +17,7 @@ code {
 }
 
 
+.css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root.Mui-selected {
+  background-color: #3D4049!important;
+  border-radius: 10px!important;
+}

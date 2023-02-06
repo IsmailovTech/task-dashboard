@@ -1,4 +1,3 @@
-import React from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
@@ -15,18 +14,17 @@ function createData(
   date: number | string,
   status: string,
   plan: string,
-  amount: number,
+  amount: number | string,
 ) {
   return { invoice, date, status, plan, amount }
 }
 
 const rows = [
-  createData('Invoice #001', 'June 1,2022', 'Paid', 'Pro Plan', 25.0),
-  createData('Invoice #002', 'June 1,2022', 'Paid', 'Pro Plan', 25.0),
+  createData('Invoice #001', 'June 1,2022', 'Paid', 'Pro Plan', '25.00'),
+  createData('Invoice #002', 'June 1,2022', 'Paid', 'Pro Plan', '25.00'),
 ]
 
 function Tables(props: Props) {
-  // const {dark} = props
 
   return (
     <div className="w-full px-16 py-5">
@@ -81,7 +79,7 @@ function Tables(props: Props) {
                   {row.plan}
                 </TableCell>
                 <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark === true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
-                  {row.amount}
+                  ${row.amount}
                 </TableCell>
                 <TableCell className='!flex !py-3 !border-zinc-700 !items-center !justify-end' >
                   <button className="bg-gray-700 hover:bg-transparent border  border-gray-700 px-3 pt-2 pb-1 rounded-md text-white text-[10px]">
