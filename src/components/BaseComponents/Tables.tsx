@@ -5,7 +5,6 @@ import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import Paper from '@mui/material/Paper'
 
 interface Props {
   dark:boolean
@@ -27,14 +26,14 @@ const rows = [
 ]
 
 function Tables(props: Props) {
-  const {dark} = props
+  // const {dark} = props
 
   return (
     <div className="w-full px-16 py-5">
       <TableContainer>
         <Table
           sx={{ minWidth: 650 }}
-          className={`${props.dark == true ? "bg-gray-white" : "bg-zinc-900"} `}
+          className={`${props.dark === true ? "bg-gray-white" : "bg-zinc-900"} `}
           size="small"
           aria-label="a dense table"
         >
@@ -66,22 +65,22 @@ function Tables(props: Props) {
                 sx={{'&:last-child td  , &:last-child th': { border: 0 } }}
               >
                 <TableCell
-                  className={`!text-xs !py-3 !border-zinc-700  ${props.dark == true ? "!text-black !font-medium" : "!text-white"}  `}
+                  className={`!text-xs !py-3 !border-zinc-700  ${props.dark === true ? "!text-black !font-medium" : "!text-white"}  `}
                   component="th"
                   scope="row"
                 >
                   {row.invoice}
                 </TableCell>
-                <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark == true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
+                <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark === true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
                   {row.date}
                 </TableCell>
-                <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark == true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
+                <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark === true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
                   {row.status}
                 </TableCell>
-                <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark == true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
+                <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark === true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
                   {row.plan}
                 </TableCell>
-                <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark == true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
+                <TableCell className={`!text-xs !py-3 !border-zinc-700 ${props.dark === true ? "!text-black !font-medium" : "!text-white"}  `} align="right">
                   {row.amount}
                 </TableCell>
                 <TableCell className='!flex !py-3 !border-zinc-700 !items-center !justify-end' >
